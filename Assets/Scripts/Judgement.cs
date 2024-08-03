@@ -11,7 +11,9 @@ public class Judgement : MonoBehaviour
     public float greatTiming = 0.2f; // 200ms 이내
     public float okayTiming = 0.3f; // 300ms 이내
     public float lateTiming = 0.5f; // 500ms 이내
-    private string currentText = ""; 
+    private string currentText = "";
+    public float maxDistanceX = 100f; // 판정 가능 거리
+    public float maxTimingInMs = 1000f; // 최대 판정 시간
 
     void Update()
     {
@@ -38,8 +40,8 @@ public class Judgement : MonoBehaviour
             }
         }
 
-        // 판정선에 가장 가까운 노트를 찾기
-        if (closestNote != null)
+        // x 좌표가 유효한지 확인
+        if (closestNote != null && Mathf.Abs(closestNote.transform.position.x - judgementLine.position.x) <= maxDistanceX)
         {
             // 노트와 판정선의 거리 계산
             float timing = closestNote.transform.position.x - judgementLine.position.x;
@@ -54,29 +56,37 @@ public class Judgement : MonoBehaviour
             {
                 newResultText = $"Perfect!\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.blue);
+                Destroy(closestNote); // Perfect timing, destroy note
             }
             else if (timingInMs <= greatTiming * 1000f)
             {
                 newResultText = $"Great!\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.green);
+                Destroy(closestNote); // Great timing, destroy note
             }
             else if (timingInMs <= okayTiming * 1000f)
             {
                 newResultText = $"Okay\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.yellow);
+                Destroy(closestNote); // Okay timing, destroy note
             }
             else if (timingInMs <= lateTiming * 1000f)
             {
                 newResultText = $"Late!\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.red);
+                Destroy(closestNote); // Late timing, destroy note
             }
-            else
+            else if (timingInMs <= maxTimingInMs)
             {
                 newResultText = $"Miss!\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.white);
+                Destroy(closestNote); // Timing exceeds late but still within 1000ms, destroy note
             }
-            
-            Destroy(closestNote);
+            else
+            {
+                // 인식 범위 밖
+                ShowResultText("Too Early!", Color.gray);
+            }
         }
     }
 
