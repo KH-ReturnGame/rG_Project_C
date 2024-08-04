@@ -15,12 +15,12 @@ public class Judgement : MonoBehaviour
     private string currentText = "";
     public float maxDistanceX = 100f; // 판정 가능 거리
     public float maxTimingInMs = 1000f; // 최대 판정 시간
-    public float combo = 0;
+    public int combo = 0;
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.J))
         {
             CheckJudgement();
         }
@@ -54,9 +54,6 @@ public class Judgement : MonoBehaviour
 
             string newResultText = "";
 
-            // 콤보 관련 변수
-            string newComboText = " ";
-
             // 판정 결과 계산
             if (timingInMs <= perfectTiming * 1000f)
             {
@@ -65,9 +62,7 @@ public class Judgement : MonoBehaviour
                 Destroy(closestNote); // Perfect timing, destroy note
 
                 combo += 1;
-                Debug.Log(combo);
-                newComboText =  $"Combo: {combo}";
-                ShowComboText(newComboText);
+                comboText.text =  $"{combo} COMBO!";
             }
             else if (timingInMs <= greatTiming * 1000f)
             {
@@ -76,9 +71,7 @@ public class Judgement : MonoBehaviour
                 Destroy(closestNote); // Great timing, destroy note
 
                 combo += 1;
-                Debug.Log(combo);
-                newComboText = $"Combo: {combo}";
-                ShowComboText(newComboText);
+                comboText.text = $"{combo} COMBO!";
             }
             else if (timingInMs <= okayTiming * 1000f)
             {
@@ -87,9 +80,7 @@ public class Judgement : MonoBehaviour
                 Destroy(closestNote); // Okay timing, destroy note
 
                 combo += 1;
-                Debug.Log(combo);
-                newComboText = $"Combo: {combo}";
-                ShowComboText(newComboText);
+                comboText.text = $"{combo} COMBO!";
             }
             else if (timingInMs <= lateTiming * 1000f)
             {
@@ -98,9 +89,7 @@ public class Judgement : MonoBehaviour
                 Destroy(closestNote); // Late timing, destroy note
 
                 combo = 0;
-                Debug.Log(combo);
-                newComboText = $"Combo: {combo}";
-                ShowComboText(newComboText);
+                comboText.text = $"{combo} COMBO!";
             }
             else if (timingInMs <= maxTimingInMs)
             {
@@ -109,18 +98,34 @@ public class Judgement : MonoBehaviour
                 Destroy(closestNote); // Timing exceeds late but still within 1000ms, destroy note
 
                 combo = 0;
-                ShowComboText(newComboText);
+                comboText.text = $"{combo} COMBO!";
             }
             else
             {
                 // 인식 범위 밖
-                ShowResultText("Too Early!", Color.gray); 
-               
+                ShowResultText("Too Early!", Color.gray);
+
                 combo = 0;
-                Debug.Log(combo);
-                newComboText = $"Combo: {combo}";
-                ShowComboText(newComboText);
+                comboText.text = $"{combo} COMBO!";
             }
+        }
+
+        // ComboText 색 변화
+        if (combo < 7)
+        {
+            comboText.text = "";
+        }
+        else if (combo < 15)
+        {
+            comboText.color = Color.gray;
+        }
+        else if (combo < 30)
+        {
+            comboText.color = Color.yellow;
+        }
+        else if (combo < 50)
+        {
+            comboText.color = Color.magenta;
         }
     }
 
@@ -132,10 +137,5 @@ public class Judgement : MonoBehaviour
             resultText.text = message;
             resultText.color = color;
         }
-    }
-
-    void ShowComboText(string message)
-    {
-         comboText.text = message;
     }
 }
