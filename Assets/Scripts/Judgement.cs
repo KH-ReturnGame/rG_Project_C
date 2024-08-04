@@ -5,8 +5,9 @@ using TMPro;
 
 public class Judgement : MonoBehaviour
 {
-    public Transform judgementLine; 
-    public TextMeshProUGUI resultText; 
+    public Transform judgementLine;
+    public TextMeshProUGUI resultText;
+    public TextMeshProUGUI comboText;
     public float perfectTiming = 0.1f; // 100ms 이내
     public float greatTiming = 0.2f; // 200ms 이내
     public float okayTiming = 0.3f; // 300ms 이내
@@ -14,6 +15,8 @@ public class Judgement : MonoBehaviour
     private string currentText = "";
     public float maxDistanceX = 100f; // 판정 가능 거리
     public float maxTimingInMs = 1000f; // 최대 판정 시간
+    public float combo = 0;
+
 
     void Update()
     {
@@ -47,9 +50,12 @@ public class Judgement : MonoBehaviour
             float timing = closestNote.transform.position.x - judgementLine.position.x;
             float timingInMs = Mathf.Abs(timing) * 1000f / 5f;
 
-            string sign = timing > 0 ? "+" : "-"; 
+            string sign = timing > 0 ? "+" : "-";
 
             string newResultText = "";
+
+            // 콤보 관련 변수
+            string newComboText = " ";
 
             // 판정 결과 계산
             if (timingInMs <= perfectTiming * 1000f)
@@ -57,35 +63,63 @@ public class Judgement : MonoBehaviour
                 newResultText = $"Perfect!\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.blue);
                 Destroy(closestNote); // Perfect timing, destroy note
+
+                combo += 1;
+                Debug.Log(combo);
+                newComboText =  $"Combo: {combo}";
+                ShowComboText(newComboText);
             }
             else if (timingInMs <= greatTiming * 1000f)
             {
                 newResultText = $"Great!\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.green);
                 Destroy(closestNote); // Great timing, destroy note
+
+                combo += 1;
+                Debug.Log(combo);
+                newComboText = $"Combo: {combo}";
+                ShowComboText(newComboText);
             }
             else if (timingInMs <= okayTiming * 1000f)
             {
                 newResultText = $"Okay\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.yellow);
                 Destroy(closestNote); // Okay timing, destroy note
+
+                combo += 1;
+                Debug.Log(combo);
+                newComboText = $"Combo: {combo}";
+                ShowComboText(newComboText);
             }
             else if (timingInMs <= lateTiming * 1000f)
             {
                 newResultText = $"Late!\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.red);
                 Destroy(closestNote); // Late timing, destroy note
+
+                combo = 0;
+                Debug.Log(combo);
+                newComboText = $"Combo: {combo}";
+                ShowComboText(newComboText);
             }
             else if (timingInMs <= maxTimingInMs)
             {
                 newResultText = $"Miss!\n{sign}{timingInMs.ToString("F1")}ms";
                 ShowResultText(newResultText, Color.white);
                 Destroy(closestNote); // Timing exceeds late but still within 1000ms, destroy note
+
+                combo = 0;
+                ShowComboText(newComboText);
             }
             else
             {
                 // 인식 범위 밖
-                ShowResultText("Too Early!", Color.gray);
+                ShowResultText("Too Early!", Color.gray); 
+               
+                combo = 0;
+                Debug.Log(combo);
+                newComboText = $"Combo: {combo}";
+                ShowComboText(newComboText);
             }
         }
     }
@@ -98,5 +132,10 @@ public class Judgement : MonoBehaviour
             resultText.text = message;
             resultText.color = color;
         }
+    }
+
+    void ShowComboText(string message)
+    {
+         comboText.text = message;
     }
 }
