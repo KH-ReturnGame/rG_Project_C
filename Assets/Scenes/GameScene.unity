@@ -550,7 +550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   judgementLine: {fileID: 2099386173}
   resultText: {fileID: 572151170}
-  comboText: {fileID: 0}
+  comboText: {fileID: 1267127332}
   perfectTiming: 0.05
   greatTiming: 0.1
   okayTiming: 0.2
