@@ -11,7 +11,7 @@ public class NoteMovement : MonoBehaviour
     {
         transform.Translate(Vector2.left * (speed * Time.deltaTime));
         
-        if (transform.position.x < - 8)
+        if (transform.position.x < - 10)
         {
             Destroy(gameObject);
         }

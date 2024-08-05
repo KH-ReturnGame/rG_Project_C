@@ -65,11 +65,9 @@ public class Judgement : MonoBehaviour
 
                 // 콤보 계산
                 combo += 1;
-                comboText.text =  $"{combo} COMBO!";
 
                 // 점수 계산
-                Score(100);
-                scoreText.text = $"Score : {score}";
+                Score(200);
 
             }
             else if (timingInMs <= greatTiming * 1000f)
@@ -80,11 +78,9 @@ public class Judgement : MonoBehaviour
 
                 // 콤보 계산
                 combo += 1;
-                comboText.text = $"{combo} COMBO!";
 
                 // 점수 계산
-                Score(100);
-                scoreText.text = $"Score : {score}";
+                Score(150);
             }
             else if (timingInMs <= okayTiming * 1000f)
             {
@@ -94,11 +90,10 @@ public class Judgement : MonoBehaviour
 
                 // 콤보 계산
                 combo += 1;
-                comboText.text = $"{combo} COMBO!";
 
                 // 점수 계산
                 Score(100);
-                scoreText.text = $"Score : {score}";
+                
             }
             else if (timingInMs <= lateTiming * 1000f)
             {
@@ -107,7 +102,6 @@ public class Judgement : MonoBehaviour
                 Destroy(closestNote); // Late timing, destroy note
 
                 combo = 0;
-                comboText.text = $"{combo} COMBO!";
 
             }
             else if (timingInMs <= maxTimingInMs)
@@ -117,7 +111,6 @@ public class Judgement : MonoBehaviour
                 Destroy(closestNote); // Timing exceeds late but still within 1000ms, destroy note
 
                 combo = 0;
-                comboText.text = $"{combo} COMBO!";
             }
             else
             {
@@ -125,8 +118,10 @@ public class Judgement : MonoBehaviour
                 ShowResultText("Too Early!", Color.gray);
 
                 combo = 0;
-                comboText.text = $"{combo} COMBO!";
+                
             }
+            comboText.text = $"{combo} COMBO!";
+            scoreText.text = $"Score : {score}";
         }
 
         // ComboText 색 변화
