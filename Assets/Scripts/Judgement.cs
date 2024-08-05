@@ -8,6 +8,7 @@ public class Judgement : MonoBehaviour
     public Transform judgementLine;
     public TextMeshProUGUI resultText;
     public TextMeshProUGUI comboText;
+    public TextMeshProUGUI scoreText;
     public float perfectTiming = 0.1f; // 100ms 이내
     public float greatTiming = 0.2f; // 200ms 이내
     public float okayTiming = 0.3f; // 300ms 이내
@@ -16,6 +17,7 @@ public class Judgement : MonoBehaviour
     public float maxDistanceX = 100f; // 판정 가능 거리
     public float maxTimingInMs = 1000f; // 최대 판정 시간
     public int combo = 0;
+    public float score;
 
 
     void Update()
@@ -61,8 +63,14 @@ public class Judgement : MonoBehaviour
                 ShowResultText(newResultText, Color.blue);
                 Destroy(closestNote); // Perfect timing, destroy note
 
+                // 콤보 계산
                 combo += 1;
                 comboText.text =  $"{combo} COMBO!";
+
+                // 점수 계산
+                Score(100);
+                scoreText.text = $"Score : {score}";
+
             }
             else if (timingInMs <= greatTiming * 1000f)
             {
@@ -70,8 +78,13 @@ public class Judgement : MonoBehaviour
                 ShowResultText(newResultText, Color.green);
                 Destroy(closestNote); // Great timing, destroy note
 
+                // 콤보 계산
                 combo += 1;
                 comboText.text = $"{combo} COMBO!";
+
+                // 점수 계산
+                Score(100);
+                scoreText.text = $"Score : {score}";
             }
             else if (timingInMs <= okayTiming * 1000f)
             {
@@ -79,8 +92,13 @@ public class Judgement : MonoBehaviour
                 ShowResultText(newResultText, Color.yellow);
                 Destroy(closestNote); // Okay timing, destroy note
 
+                // 콤보 계산
                 combo += 1;
                 comboText.text = $"{combo} COMBO!";
+
+                // 점수 계산
+                Score(100);
+                scoreText.text = $"Score : {score}";
             }
             else if (timingInMs <= lateTiming * 1000f)
             {
@@ -90,6 +108,7 @@ public class Judgement : MonoBehaviour
 
                 combo = 0;
                 comboText.text = $"{combo} COMBO!";
+
             }
             else if (timingInMs <= maxTimingInMs)
             {
@@ -123,7 +142,7 @@ public class Judgement : MonoBehaviour
         {
             comboText.color = Color.yellow;
         }
-        else if (combo < 50)
+        else
         {
             comboText.color = Color.magenta;
         }
@@ -136,6 +155,31 @@ public class Judgement : MonoBehaviour
             currentText = message;
             resultText.text = message;
             resultText.color = color;
+        }
+    }
+
+    void Score(float addscore)
+    {
+
+        if (combo < 7)
+        {
+            score += addscore;
+        }
+        else if (combo < 15)
+        {
+            score += (addscore * 1.1F);
+        }
+        else if (combo < 30)
+        {
+            score += (addscore * 1.2F);
+        }
+        else if (combo < 50)
+        {
+            score += (addscore * 1.3F);
+        }
+        else
+        {
+            score += (addscore * 1.5F);
         }
     }
 }
