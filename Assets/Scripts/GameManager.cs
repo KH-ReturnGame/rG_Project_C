@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public float initialSpeed = 2.0f;   // 초기 속도
-    public float acceleration = 1.0f;   // 시간당 속도 증가량
+    public float initialSpeed = 2.0f;
+    public float acceleration = 0.1f;
+    private float timeElapsed = 0.0f;
 
-    private float timeElapsed = 0.0f;   // 경과 시간
+    public float CurrentSpeed { get; private set; }
 
-    public float CurrentSpeed { get; private set; }  // 현재 속도
+    private int missedNotes = 0; // 놓친 노트 수
+    public int maxMissedNotes = 5;
 
     void Awake()
     {
@@ -33,8 +35,28 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         timeElapsed += Time.deltaTime;
         CurrentSpeed = initialSpeed + acceleration * timeElapsed;
     }
+    
+    public void NoteMissed()
+    {
+        missedNotes++;
+        Debug.Log("Missed Notes: " + missedNotes);
+
+        if (missedNotes >= maxMissedNotes)
+        {
+            GameOver();
+        }
+    }
+    
+    void GameOver()
+    {
+        Debug.Log("Game Over!");
+        Time.timeScale = 0;
+    }
 }
+
 

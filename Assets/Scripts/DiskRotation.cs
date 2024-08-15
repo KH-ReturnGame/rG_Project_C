@@ -5,7 +5,7 @@ using UnityEngine;
 public class DiskRotation : MonoBehaviour
 {
     private Vector3 initialMousePosition;  // 첫 번째 마우스 위치
-    private bool isFirstMouseInput = true; // 첫 번째 입력 체크
+    private bool isFirstMouseInput = true;
 
     void Update()
     {

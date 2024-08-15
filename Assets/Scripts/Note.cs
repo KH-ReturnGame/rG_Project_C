@@ -9,17 +9,17 @@ public class Note : MonoBehaviour
         if (GameManager.Instance != null)
         {
             float speed = GameManager.Instance.CurrentSpeed;
-            Debug.Log(" 현재 노트 속도: " + speed);
-            
             transform.Translate(Vector2.down * speed * Time.deltaTime);
         }
         
         if (transform.position.y < -6)
         {
+            GameManager.Instance.NoteMissed(); // 놓친 노트 처리
             Destroy(gameObject);
         }
     }
 }
+
 
 
 

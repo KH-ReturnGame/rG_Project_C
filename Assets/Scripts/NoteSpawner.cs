@@ -16,6 +16,8 @@ public class NoteSpawner : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+        
         // 노트 생성 주기 조정
         if (GameManager.Instance != null)
         {
