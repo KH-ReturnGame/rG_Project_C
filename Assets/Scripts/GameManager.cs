@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class GameManager : MonoBehaviour
 
     public float CurrentSpeed { get; private set; }
 
-    private int missedNotes = 0; // 놓친 노트 수
+    public TextMeshProUGUI comboText;
+    public TextMeshProUGUI missNoteText;
+
+    private float missedNotes = 0; // 놓친 노트 수
     public int maxMissedNotes = 5;
 
     void Awake()
@@ -45,9 +49,25 @@ public class GameManager : MonoBehaviour
     {
         missedNotes++;
         Debug.Log("Missed Notes: " + missedNotes);
-
-        if (missedNotes >= maxMissedNotes)
+        if (missedNotes == 1)
         {
+            missNoteText.text = ("♥ ♥ ♥ ♥ ♡");
+        }
+        else if (missedNotes == 2)
+        {
+            missNoteText.text = ("♥ ♥ ♥ ♡ ♡");
+        }
+        else if (missedNotes == 3)
+        {
+            missNoteText.text = ("♥ ♥ ♡ ♡ ♡");
+        }
+        else if (missedNotes == 4)
+        {
+            missNoteText.text = ("♥ ♡ ♡ ♡ ♡");
+        }
+        else if (missedNotes >= maxMissedNotes)
+        {
+            missNoteText.text = ("♡ ♡ ♡ ♡ ♡");
             GameOver();
         }
     }
