@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Start : MonoBehaviour
+public class End : MonoBehaviour
 {
-    public void StartBtn(){
+    public void RetryBtn()
+    {
+        Debug.Log("StartScene");
         SceneManager.LoadScene("LobbyScene");
     }
 }
