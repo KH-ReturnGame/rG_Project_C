@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public float initialSpeed = 2.0f;
     public float acceleration = 0.1f;
-    private float timeElapsed = 0.0f;
+    //private float timeElapsed = 0.0f;
 
     public float CurrentSpeed { get; private set; }
 
@@ -35,10 +35,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 0) return;
+        /*if (Time.timeScale == 0) return;
 
         timeElapsed += Time.deltaTime;
-        CurrentSpeed = initialSpeed + acceleration * timeElapsed;
+        CurrentSpeed = initialSpeed + acceleration * timeElapsed;*/
     }
     
     public void NoteMissed()
