@@ -5,41 +5,25 @@ using UnityEngine;
 public class NoteSpawner : MonoBehaviour
 {
     public GameObject notePrefab;
-    public float baseSpawnInterval = 2.0f;
-    private float spawnInterval;
-    private float timer;
+    public NoteMap noteMap;
+    private int currentNoteIndex = 0;
 
-    void Start()
+    void FixedUpdate()
     {
-        spawnInterval = baseSpawnInterval; 
-    }
-
-    void Update()
-    {
-        if (Time.timeScale == 0) return;
+        if (Time.timeScale == 0 || currentNoteIndex >= noteMap.notes.Count) return;
         
-        // 노트 생성 주기 조정
-        if (GameManager.Instance != null)
+        if (Time.time >= noteMap.notes[currentNoteIndex].time)
         {
-            spawnInterval = baseSpawnInterval / GameManager.Instance.CurrentSpeed;
-        }
-
-        timer += Time.deltaTime;
-
-        if (timer >= spawnInterval)
-        {
-            SpawnNote();
-            timer = 0f;
+            // 지정된 X좌표에 노트를 스폰
+            SpawnNote(noteMap.notes[currentNoteIndex].xPosition);
+            currentNoteIndex++;
         }
     }
 
-    void SpawnNote()
+    void SpawnNote(float xPosition)
     {
-        float xPosition = Random.Range(-2.5f, 2.5f);
+        // 노트를 지정된 X좌표에 생성
         Vector3 spawnPosition = new Vector3(xPosition, 5, 0);
         Instantiate(notePrefab, spawnPosition, Quaternion.identity);
     }
 }
-
-
-

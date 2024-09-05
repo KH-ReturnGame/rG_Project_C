@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93880c418962ac64d8b4d87d83a21c2f, type: 3}
+  m_Name: NoteMap
+  m_EditorClassIdentifier: 
+  notes:
+  - time: 0.1
+    xPosition: -2
+  - time: 0.2
+    xPosition: -1
+  - time: 0.3
+    xPosition: 0
+  - time: 0.4
+    xPosition: 1
+  - time: 0.5
+    xPosition: 2

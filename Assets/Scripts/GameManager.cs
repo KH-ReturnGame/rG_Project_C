@@ -7,9 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public float initialSpeed = 2.0f;
-    public float acceleration = 0.1f;
-    private float timeElapsed = 0.0f;
-
+    
     public float CurrentSpeed { get; private set; }
 
     private int missedNotes = 0; // 놓친 노트 수
@@ -37,8 +35,7 @@ public class GameManager : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
-        timeElapsed += Time.deltaTime;
-        CurrentSpeed = initialSpeed + acceleration * timeElapsed;
+        CurrentSpeed = initialSpeed;
     }
     
     public void NoteMissed()
@@ -51,12 +48,10 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
-    
-    void GameOver()
+
+    private void GameOver()
     {
-        Debug.Log("Game Over!");
+        Debug.Log("Game Over");
         Time.timeScale = 0;
     }
 }
-
-
