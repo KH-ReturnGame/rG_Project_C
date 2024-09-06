@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         Debug.Log("Game Over!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("EndScene");
     }
 }
