@@ -13,13 +13,27 @@ MonoBehaviour:
   m_Name: NoteMap
   m_EditorClassIdentifier: 
   notes:
-  - time: 0.1
-    xPosition: -2
-  - time: 0.2
-    xPosition: -1
-  - time: 0.3
+  - time: 0.7
     xPosition: 0
-  - time: 0.4
+  - time: 1.3
+    xPosition: 0
+  - time: 1.9
+    xPosition: 0
+  - time: 2.5
+    xPosition: 0
+  - time: 3.2
     xPosition: 1
-  - time: 0.5
+  - time: 3.8
+    xPosition: -1
+  - time: 4.4
+    xPosition: 1
+  - time: 5
+    xPosition: -1
+  - time: 5.7
     xPosition: 2
+  - time: 6.3
+    xPosition: -2
+  - time: 6.9
+    xPosition: 2
+  - time: 7.5
+    xPosition: -2

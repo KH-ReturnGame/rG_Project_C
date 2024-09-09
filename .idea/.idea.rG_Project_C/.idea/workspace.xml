@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d388b37c-ee2f-45f6-a094-105a0b44e390" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.rG_Project_C/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.rG_Project_C/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note.cs" afterDir="false" />
-    </list>
+    <list default="true" id="d388b37c-ee2f-45f6-a094-105a0b44e390" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +94,7 @@
       <updated>1722663114728</updated>
       <workItem from="1722663119322" duration="3401000" />
       <workItem from="1722667243581" duration="297000" />
-      <workItem from="1725559291475" duration="4312000" />
+      <workItem from="1725559291475" duration="4696000" />
     </task>
     <servers />
   </component>
