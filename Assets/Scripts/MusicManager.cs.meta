@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - audioSource: {instanceID: 0}
-  - musicClip: {fileID: 8300000, guid: d246daf0ef20183479812ff0473f40af, type: 3}
+  - musicClip: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
