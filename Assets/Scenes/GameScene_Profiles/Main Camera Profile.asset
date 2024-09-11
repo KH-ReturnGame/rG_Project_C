@@ -32,19 +32,19 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 57
+    value: 100
   intensityX:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.273
   intensityY:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.642
   centerX:
     overrideState: 0
-    value: -0.02
+    value: -0
   centerY:
     overrideState: 1
-    value: -0.62
+    value: -0.5
   scale:
     overrideState: 1
-    value: 1.38
+    value: 1.29
