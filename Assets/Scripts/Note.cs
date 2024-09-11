@@ -11,20 +11,11 @@ public class Note : MonoBehaviour
             float speed = GameManager.Instance.CurrentSpeed;
             transform.Translate(Vector2.down * speed * Time.deltaTime);
         }
-        
+    
         if (transform.position.y < -6)
         {
-            GameManager.Instance.NoteMissed(); // 놓친 노트 처리
+            GameManager.Instance.NoteMissed();  // 놓친 노트 처리
             Destroy(gameObject);
         }
     }
 }
-
-
-
-
-
-
-
-
-
