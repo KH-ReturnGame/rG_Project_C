@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
         {
             score++;
             Destroy(other.gameObject);
-            Debug.Log("Score: " + score);
+           //   Debug.Log("Score: " + score);
         }
     }
 }
