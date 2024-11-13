@@ -8,12 +8,12 @@ public class JudgeArea : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Note"))
-        {
-            score++;
-            Destroy(other.gameObject);
-            Debug.Log("Score: " + score);
-        }
+        //if (other.gameObject.CompareTag("Note"))
+        //{
+        //    score++;
+        //    Destroy(other.gameObject);
+        //    Debug.Log("Score: " + score);
+        //}
     }
 }
 

@@ -102,13 +102,11 @@ public class GameManager : MonoBehaviour
             {
                 newResultText = $"Perfect!\n{sign}{timingInMs.ToString("F1")}ms";
                 Destroy(closestNote); // Perfect timing, destroy note
-
                 // 콤보 계산
                 // combo += 1;
 
                 // 점수 계산
                 score += 200;
-                Debug.Log("Score: " + score);
 
 
             }
@@ -121,8 +119,7 @@ public class GameManager : MonoBehaviour
                 // combo += 1;
 
                 // 점수 계산
-                score += 200;
-                Debug.Log("Score: " + score);
+                score += 150;
             }
             else if (timingInMs <= okayTiming * 1000f)
             {
@@ -133,8 +130,7 @@ public class GameManager : MonoBehaviour
                 // combo += 1;
 
                 // 점수 계산
-                score += 200;
-                Debug.Log("Score: " + score);
+                score += 120;
 
             }
             else if (timingInMs <= lateTiming * 1000f)
@@ -160,7 +156,7 @@ public class GameManager : MonoBehaviour
 
             }
 
-            Debug.Log(score);
+            Debug.Log("Score: " + score);
 
         }
     }

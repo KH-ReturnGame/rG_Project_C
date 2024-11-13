@@ -6,14 +6,14 @@ public class ScoreManager : MonoBehaviour
 {
     public int score = 0;
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Note"))
-        {
-            score++;
-            Destroy(other.gameObject);
-           //   Debug.Log("Score: " + score);
-        }
-    }
+    //void OnTriggerEnter2D(Collider2D other)
+    //{
+        //if (other.gameObject.CompareTag("Note"))
+        //{
+           // score += 100;
+            //Destroy(other.gameObject);
+           //   Debug.Log("Score: " + sco   re);
+     //   }
+    //}
 }
 
