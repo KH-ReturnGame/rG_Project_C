@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Option Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Option
+  m_TableCollectionNameGuidString: 39acbb76430037e4a97e62ad7f9d2bf4
+  m_Entries:
+  - m_Id: 280504066048
+    m_Key: gen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283385552896
+    m_Key: vid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 285914718208
+    m_Key: snd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 515041157120
+    m_Key: gam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 515737411584
+    m_Key: ctr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516324614144
+    m_Key: hc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516886650880
+    m_Key: cb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517499019264
+    m_Key: lang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517893283840
+    m_Key: res
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518526623744
+    m_Key: viewfps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 519088660480
+    m_Key: window
+    m_Metadata:
+      m_Items: []
+  - m_Id: 519684251648
+    m_Key: j.offset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 520267259904
+    m_Key: v.offset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 520950931456
+    m_Key: anti-aliasing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 521533939712
+    m_Key: qul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 522171473920
+    m_Key: playback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 522804813824
+    m_Key: master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 523425570816
+    m_Key: music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 524084076544
+    m_Key: sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 524729999360
+    m_Key: s.offset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 525375922176
+    m_Key: buffer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 526005067776
+    m_Key: playwhile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 526709710848
+    m_Key: sensitive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 527309496320
+    m_Key: pollingrate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 527947030528
+    m_Key: windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 528601341952
+    m_Key: borderless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 529230487552
+    m_Key: fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 529914159104
+    m_Key: high
+    m_Metadata:
+      m_Items: []
+  - m_Id: 530560081920
+    m_Key: middle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 531260530688
+    m_Key: low
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7295044722454429720
+  references:
+    version: 2
+    RefIds:
+    - rid: 7295044722454429720
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1735123966036

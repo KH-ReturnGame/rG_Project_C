@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Option_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 39acbb76430037e4a97e62ad7f9d2bf4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 280504066048
+    m_Localized: General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283385552896
+    m_Localized: Graphic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 285914718208
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516886650880
+    m_Localized: Color Blind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517499019264
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 516324614144
+    m_Localized: High Contrast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 515737411584
+    m_Localized: Input
+    m_Metadata:
+      m_Items: []
+  - m_Id: 515041157120
+    m_Localized: Gameplay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 520950931456
+    m_Localized: Anti-Aliasing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 521533939712
+    m_Localized: Graphic Quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 520267259904
+    m_Localized: Video Offset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 519684251648
+    m_Localized: judgment offset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 519088660480
+    m_Localized: Window
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518526623744
+    m_Localized: View FPS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517893283840
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 522171473920
+    m_Localized: Playback Device
+    m_Metadata:
+      m_Items: []
+  - m_Id: 522804813824
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 523425570816
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 524084076544
+    m_Localized: SFX Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 524729999360
+    m_Localized: Sound Offset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 525375922176
+    m_Localized: Audio Buffer Size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 527309496320
+    m_Localized: Polling Rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 526709710848
+    m_Localized: Mouse Sensitive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 527947030528
+    m_Localized: Windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 528601341952
+    m_Localized: Borderless Window
+    m_Metadata:
+      m_Items: []
+  - m_Id: 529230487552
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 531260530688
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 529914159104
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 530560081920
+    m_Localized: Middle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 526005067776
+    m_Localized: Sound plays while in background
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
